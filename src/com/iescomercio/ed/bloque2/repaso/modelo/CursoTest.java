@@ -78,8 +78,13 @@ class CursoTest {
 	
 	@Test
 	void testCurso() {
-		fail("Not yet implemented");
-
+		ArrayList<Persona> listaAlumnos=new ArrayList<Persona>();
+		Curso c=new Curso();
+		Persona p = new Persona("123456789","juan","gomez");
+		c.aniadirAlumno(p);
+		listaAlumnos.add(p);
+		
+		assertEquals(listaAlumnos.size(), c.numeroAlumnos());
 
 	}
 
@@ -88,9 +93,6 @@ class CursoTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	void testMostrarTodos() {
-		fail("Not yet implemented");
-	}
+	
 
 }
