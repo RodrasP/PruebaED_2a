@@ -31,7 +31,17 @@ class CursoTest {
 	
 	@Test
 	void testEliminarAlumno() {
-		fail("Not yet implemented");
+		Curso c = new Curso();
+		c.aniadirAlumno(new Persona("123456789", "pedro", "sanz"));
+		c.aniadirAlumno(new Persona("123456788", "juan", "sanz"));
+		int numeroAlumAntes = c.numeroAlumnos();
+		try {
+			c.eliminarAlumno("123456789");
+		} catch (Exception e1) {
+		}
+		int numeroAlumDes = c.numeroAlumnos();
+		assertEquals(numeroAlumAntes - 1, numeroAlumDes);
+		assertThrows(Exception.class, () -> c.eliminarAlumno("12"));
 	}
 
 			
