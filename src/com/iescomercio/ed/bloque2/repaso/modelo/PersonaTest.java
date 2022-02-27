@@ -17,13 +17,6 @@ class PersonaTest {
 	void testGetDni() {
 		Persona p1 = new Persona ("123456789", "pedro", "marquez");
 		
-		try {
-			
-			String dni = p1.getDni();
-			
-		} catch (Exception e1){
-			assertThrows(Exception.class, ()->p1.getDni());
-		}
 		
 		assertEquals("123456789", p1.getDni());
 		
