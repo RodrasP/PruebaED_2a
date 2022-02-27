@@ -94,7 +94,7 @@ class CursoTest {
 		Curso c = new Curso();
 		c.aniadirAlumno(new Persona("123456789", "pedro", "sanz"));
 		c.aniadirAlumno(new Persona("123456788", "juan", "sanz"));
-		assertEquals(c.numeroAlumnos(), 2);
+		assertEquals(2, c.numeroAlumnos());
 		
 		
 	}
