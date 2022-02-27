@@ -23,15 +23,21 @@ class PersonaTest {
 	}
 
 	
-	
-	
-	
-	
 	@Test
 	void testSetDni() {
 		fail("Not yet implemented");
+		
+		
+		
+		
 	}
 
+	
+	
+	
+	
+	
+	
 	@Test
 	void testGetNombre() {
 		Persona p = new Persona ("12345678A", "Pedro", "Gonzalez");
@@ -42,9 +48,6 @@ class PersonaTest {
 		
 	}
 
-	
-	
-	
 	@Test
 	void testSetNombre() {
 		Persona p = new Persona();

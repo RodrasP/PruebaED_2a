@@ -11,6 +11,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CursoTest {
+	public Curso c;
+
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -27,23 +29,33 @@ class CursoTest {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
+	
+	 @BeforeEach
+	    void beforeEach() {
+	        c = new Curso();
+	        c.aniadirAlumno(new Persona("123456789", "juan", "gomez"));
+	        c.aniadirAlumno(new Persona("25", "pepe", "sanchez"));
+	        c.aniadirAlumno(new Persona("123477789", "adrian", "ocaña"));
+	    }
 
 	
 	@Test
-	void testEliminarAlumno() {
-		Curso c = new Curso();
-		c.aniadirAlumno(new Persona("123456789", "pedro", "sanz"));
-		c.aniadirAlumno(new Persona("123456788", "juan", "sanz"));
-		int numeroAlumAntes = c.numeroAlumnos();
-		try {
-			c.eliminarAlumno("123456789");
-		} catch (Exception e1) {
-		}
-		int numeroAlumDes = c.numeroAlumnos();
-		assertEquals(numeroAlumAntes - 1, numeroAlumDes);
-		assertThrows(Exception.class, () -> c.eliminarAlumno("12"));
-	}
+    void testEliminarAlumno() {
+        try {
+            int numBefore = c.numeroAlumnos();
+            c.eliminarAlumno("123456789");
+            int numAfter = c.numeroAlumnos();
+            assertEquals(numBefore - 1, numAfter);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
+    }
+
+    @Test
+    void testEliminarAlumnoError() {
+        assertThrows(Exception.class, () -> c.eliminarAlumno("1"));
+    }
 			
 	@Test
 	void testAniadirAlumno() {
