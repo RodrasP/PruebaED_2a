@@ -8,26 +8,35 @@ public class Persona{
 	
 	public Persona() {}
 	
-	/*
-	 * Documentar y crear test unitario
-	 * */
+	
+	/**
+	 * Constructor de la clase persona.
+	 * @param dni Dni de la persona que vamos a aniadir
+	 * @param nombre Nombre de la persona que vamos a  aniadir
+	 * @param apellido1 Apelledido de la perosna que vamos a aniadir.
+	 */
 	public Persona(String dni, String nombre, String apellido1) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 	}
 	
-	/*
-	 * Documentar y crear test unitario
-	 * */
+	
+	/**
+	 * Metodo para obtener el dni de la persona
+	 * @return Devuelve el dni de la persona 
+	 */
 	public String getDni() {
 		return dni;
 	}
 	
 	
-	/*
-	 * Documentar y crear test unitario
-	 * */
+	
+	/**
+	 * Metodo para asignar el dni de una persona, despues de haberla creado
+	 * @param dni Dni el cual queremos ponerle a la persoan 
+	 * @throws Exception Si el DNI contiene 9 numeros en vez de 8 numero y 8 letras
+	 */
 	public void setDni(String dni) throws Exception {
 		//comprobacion de si el ultimo caracter es una letra
 		if(Character.isLetter(dni.charAt(dni.length()))) {
@@ -37,30 +46,38 @@ public class Persona{
 		}
 	}
 	
-	/*
-	 * Documentar y crear test unitario
-	 * */
+	
+	/**
+	 * Metodo para saber el nombre de una persona 
+	 * @return Devuelve el nombre de la persona
+	 */
 	public String getNombre() {
 		return nombre;
 	}
 	
-	/*
-	 * Documentar y crear test unitario
-	 * */
+	
+	/**
+	 * Metodo para asignar un nombre a una persona
+	 * @param nombre nombre que vamos a asignarle a la persona
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
-	/*
-	 * Documentar y crear test unitario
-	 * */
+	
+	/**
+	 * Metodo para aobtener el apellido de la persona
+	 * @return Devuelve el apellido de la persona
+	 */
 	public String getApellido1() {
 		return apellido1;
 	}
 	
-	/*
-	 * Documentar y crear test unitario
-	 * */
+	
+	/**
+	 * Metodo para asignar el apellido a la una persona
+	 * @param apellido1 Apellido que le vamos a asignar.
+	 */
 	public void setApellido1(String apellido1) {
 		this.apellido1 = apellido1;
 	}
